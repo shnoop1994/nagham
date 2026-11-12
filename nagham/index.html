@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b2a24" />
+    <meta name="description" content="نغم — بيانو عربي تفاعلي بمقامات ولوحة أفقية تملأ الشاشة" />
+    <title>نغم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+      <div class="grain"></div>
+    </div>
+
+    <main id="app">
+      <section id="home" class="view view-home is-active" aria-label="أقسام نغم">
+        <header class="home-hero">
+          <p class="brand" aria-label="نغم">نغم</p>
+          <h1 class="tagline">بيانو عربي للمقامات والنغمات</h1>
+          <p class="lead">اختر قسماً وابدأ العزف على لوحة أفقية تملأ الشاشة.</p>
+        </header>
+
+        <nav class="sections" aria-label="أقسام العزف">
+          <button class="section-tile" type="button" data-section="free">
+            <span class="section-name">بيانو حر</span>
+            <span class="section-desc">لوحة كاملة بكل الدرجات</span>
+          </button>
+          <button class="section-tile" type="button" data-section="rast">
+            <span class="section-name">راست</span>
+            <span class="section-desc">أساس الطرب الشرقي</span>
+          </button>
+          <button class="section-tile" type="button" data-section="bayati">
+            <span class="section-name">بياتي</span>
+            <span class="section-desc">دفء ونَفَس شعبي</span>
+          </button>
+          <button class="section-tile" type="button" data-section="hijaz">
+            <span class="section-name">حجاز</span>
+            <span class="section-desc">شجن ورحابة</span>
+          </button>
+          <button class="section-tile" type="button" data-section="saba">
+            <span class="section-name">صبا</span>
+            <span class="section-desc">حنين رقيق</span>
+          </button>
+          <button class="section-tile" type="button" data-section="nahawand">
+            <span class="section-name">نهاوند</span>
+            <span class="section-desc">عمق ناعم</span>
+          </button>
+          <button class="section-tile" type="button" data-section="ajam">
+            <span class="section-name">عجم</span>
+            <span class="section-desc">بهجة مشرقة</span>
+          </button>
+          <button class="section-tile" type="button" data-section="kurd">
+            <span class="section-name">كرد</span>
+            <span class="section-desc">سكون ووضوح</span>
+          </button>
+        </nav>
+      </section>
+
+      <section id="piano" class="view view-piano" aria-label="لوحة العزف" hidden>
+        <header class="piano-bar">
+          <button id="back-btn" class="back-btn" type="button" aria-label="العودة للأقسام">
+            <span aria-hidden="true">→</span>
+            الأقسام
+          </button>
+          <div class="piano-title">
+            <p class="brand-inline">نغم</p>
+            <h2 id="maqam-title">بيانو حر</h2>
+          </div>
+          <div class="piano-meta">
+            <span id="note-readout" class="note-readout" aria-live="polite">—</span>
+          </div>
+        </header>
+
+        <div class="board-wrap">
+          <div id="keyboard" class="keyboard" role="group" aria-label="مفاتيح البيانو"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
