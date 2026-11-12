@@ -22,6 +22,7 @@ function showHome() {
   void homeView.offsetWidth;
   homeView.classList.add("is-active");
   noteReadout.textContent = "—";
+  noteReadout.classList.remove("is-live");
 }
 
 function showPiano(sectionId) {
@@ -71,12 +72,17 @@ function pressKey(id, pointerId) {
   el.classList.add("is-active");
   playTone(id, key.hz);
   noteReadout.textContent = key.label;
+  noteReadout.classList.add("is-live");
   if (pointerId != null) pointerToKey.set(pointerId, id);
 }
 
 function releaseKey(id) {
   const el = keyboardEl.querySelector(`[data-key-id="${id}"]`);
-  if (el) el.classList.remove("is-active");
+  if (el) {
+    el.classList.remove("is-active");
+    el.classList.add("is-flash");
+    window.setTimeout(() => el.classList.remove("is-flash"), 160);
+  }
   stopTone(id);
 }
 
